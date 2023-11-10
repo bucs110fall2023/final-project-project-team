@@ -30,11 +30,11 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. Levels
+2. Increasing Difficulty
+3. Start Menu
+4. Moveable player
+5. Enemies
 
 ### Classes
 
