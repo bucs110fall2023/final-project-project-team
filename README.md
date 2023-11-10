@@ -4,15 +4,15 @@
 # Space Invaders
 ## CS110 Final Project  << Fall, 2023 >>
 
-## Amadou Barrie, Nick Gonzalez
+## Project Team
 
-<< List team member names >>
+Amadou Barrie, Nick Gonzalez
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+We would like to implement a version of Space Invaders where we have a level system with increasing difficulty.
 
 ***    
 
