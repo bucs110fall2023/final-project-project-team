@@ -11,7 +11,7 @@ Nicholas Gonzalez, Amadou Barrie
 
 ## Project Description
 
-We plan on making a game based on "Space Invaders". We want to implement a movable character, enemies, obstacles, and a level system.
+We plan on making a game based on "Space Invaders". We want to implement a movable character, enemies, obstacles, and a level system. The basics of what we want to do is control a player that can shoot, and have enemies that shoot back.
 ***    
 
 ## GUI Design
