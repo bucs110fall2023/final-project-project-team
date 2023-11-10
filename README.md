@@ -6,21 +6,19 @@
 
 ## Project Team
 
-Amadou Barrie, Nick Gonzalez
-
+Nicholas Gonzalez, Amadou Barrie
 ***
 
 ## Project Description
 
-We would like to implement a version of Space Invaders where we have a level system with increasing difficulty.
-
+We plan on making a game based on "Space Invaders".
 ***    
 
 ## GUI Design
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](assets/gui.png)
 
 ### Final Design
 
