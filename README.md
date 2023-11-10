@@ -6,21 +6,19 @@
 
 ## Project Team
 
-<< List team member names >>
-
+Nicholas Gonzalez, Amadou Barrie
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
-
+We plan on making a game based on "Space Invaders".
 ***    
 
 ## GUI Design
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](assets/gui.png)
 
 ### Final Design
 
