@@ -6,13 +6,13 @@
 
 ## Team Members
 
-<< List team member names >>
+Nicholas Gonzalez, Amadou Barrie
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+We plan to make a game based on "Space Invaders". As of right now, we want to be able to have a movable charater that can fight back, enemies that also fight back, obstacles, and a high score. Things we also want to implement, but are not core to the design are diffculty, levels, and an ulimited mode. 
 
 ***    
 
@@ -29,12 +29,12 @@
 ## Program Design
 
 ### Features
-
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+ 
+1. Movable player
+2. Levels
+3. Diffculty
+4. Game over screen
+5. Start screen
 
 ### Classes
 
