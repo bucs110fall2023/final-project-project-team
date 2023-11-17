@@ -1,6 +1,7 @@
 # from src.alien import Alien
 import pygame
 from player import Player
+from laser import Laser
 
 class Controller:
     def __init__(self):
@@ -12,6 +13,10 @@ class Controller:
         player1=Player(500,500,"assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
+        laser_group = pygame.sprite.Group()
+        laser = Laser(500, 500)
+        laser_group.add(laser)
+        
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
