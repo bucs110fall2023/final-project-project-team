@@ -20,10 +20,18 @@ class Controller:
         laser_group.add(laser)
         
         while True:
+            self.display.blit(background,(0,0))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     break
+                if event.type==pygame.KEYDOWN:
+                    if event.key==pygame.K_SPACE:
+                        laser.rect.center=player1.rect.center
+                        while laser.rect.y>0:
+                            y=laser.rect.y-8
+                            laser_group.update(y)
+                            laser_group.draw(self.display)
             pressed=pygame.key.get_pressed()
             if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-8
@@ -31,11 +39,9 @@ class Controller:
             if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
                 x=player1.rect.x+8
                 player1_group.update(x)
-            if pressed[pygame.K_SPACE]:
-                laser.vel +=1
+           
 
             
-            self.display.blit(background,(0,0))
             player1_group.draw(self.display)
             laser_group.draw(self.display)
             pygame.display.flip()        
