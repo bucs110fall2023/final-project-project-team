@@ -16,7 +16,7 @@ class Controller:
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
-        laser = Laser(500, 500, 0)
+        laser = Laser(500, 500)
         laser_group.add(laser)
         
         while True:
@@ -43,5 +43,4 @@ class Controller:
 
             
             player1_group.draw(self.display)
-            laser_group.draw(self.display)
             pygame.display.flip()        
