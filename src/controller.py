@@ -19,7 +19,7 @@ class Controller:
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
-        laser = Laser(500, 500)
+        laser = Laser(500, 500,8)
         laser_group.add(laser)
         alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
         alien_group=pygame.sprite.Group()
@@ -51,10 +51,14 @@ class Controller:
 
             
             player1_group.draw(self.display)
-            for i in range(0,6):
-                 alien_group.add(alien1)
-                 alien_group.draw(self.display)
-
-                 
-
-            pygame.display.flip()        
+            pygame.display.flip()      
+            
+            # Moving alien prototype  
+            # if alien1.rect.x>0 and alien1.rect.right<self.width:
+            #     alien_x=alien1.rect.x+10
+            #     alien1.update(alien_x)
+            #     alien_group.draw(self.display)
+            #     pygame.display.flip()        
+            # else:
+            #     alien1.rect.center=((200,200))   
+                    
