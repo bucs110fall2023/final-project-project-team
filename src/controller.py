@@ -1,6 +1,6 @@
 # from src.alien import Alien
-from src.player import Player
 import pygame
+import player
 
 class Controller:
     def __init__(self):
@@ -24,6 +24,8 @@ class Controller:
             if pressed[pygame.K_RIGHT]:
                 x=player1.rect.x+5
                 player1_group.update(x)
+            if pressed[pygame.K_SPACE]:
+                pass
 
         
             self.display.blit(background,(0,0))
