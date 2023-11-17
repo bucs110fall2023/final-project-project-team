@@ -50,4 +50,14 @@ class Controller:
             
             player1_group.draw(self.display)
             alien_group.draw(self.display)
-            pygame.display.flip()        
+            pygame.display.flip()      
+            
+            # Moving alien prototype  
+            # if alien1.rect.x>0 and alien1.rect.right<self.width:
+            #     alien_x=alien1.rect.x+10
+            #     alien1.update(alien_x)
+            #     alien_group.draw(self.display)
+            #     pygame.display.flip()        
+            # else:
+            #     alien1.rect.center=((200,200))   
+                    
