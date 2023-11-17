@@ -19,11 +19,16 @@ class Controller:
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
-        laser = Laser(500, 500,8)
+        laser = Laser(500, 500)
         laser_group.add(laser)
-        alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
+        # alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
+        num_aliens = 5
         alien_group=pygame.sprite.Group()
-        alien_group.add(alien1)
+        for alien in range(num_aliens):
+            alien1 = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
+            alien_group.add(alien1)
+        print(alien_group)
+            
         
         while True:
             self.display.blit(self.background,(0,0))
@@ -36,7 +41,7 @@ class Controller:
                         laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
                             if laser.rect.colliderect(alien1.rect):
-                                alien_group.remove(alien1)                             
+                                alien_group.remove(alien1)                           
                             y=laser.rect.y-8
                             laser_group.update(y)
                             laser_group.draw(self.display)
@@ -47,10 +52,15 @@ class Controller:
             if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
                 x=player1.rect.x+8
                 player1_group.update(x)
+            
+            for alien in range(num_aliens):
+                alien_group.draw(self.display)
            
-
+            
             
             player1_group.draw(self.display)
+            
+            
             pygame.display.flip()      
             
             # Moving alien prototype  
