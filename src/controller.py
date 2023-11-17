@@ -27,7 +27,7 @@ class Controller:
                     break
                 if event.type==pygame.KEYDOWN:
                     if event.key==pygame.K_SPACE:
-                        laser.rect.y=500
+                        laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
                             y=laser.rect.y-8
                             laser_group.update(y)
