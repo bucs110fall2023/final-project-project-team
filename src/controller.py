@@ -28,7 +28,7 @@ class Controller:
             if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-8
                 player1_group.update(x)
-            if pressed[pygame.K_RIGHT] and player1.rect.x<self.width:
+            if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
                 x=player1.rect.x+8
                 player1_group.update(x)
             if pressed[pygame.K_SPACE]:
