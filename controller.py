@@ -1,4 +1,5 @@
 from alien import Alien
+from src.player import Player
 import pygame
 
 class Controller:
