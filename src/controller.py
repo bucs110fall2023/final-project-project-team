@@ -1,6 +1,6 @@
 # from src.alien import Alien
 import pygame
-import player
+from src.player import Player
 
 class Controller:
     def __init__(self):
@@ -18,16 +18,16 @@ class Controller:
                     pygame.quit()
                     break
             pressed=pygame.key.get_pressed()
-            if pressed[pygame.K_LEFT]:
+            if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-5
                 player1_group.update(x)
-            if pressed[pygame.K_RIGHT]:
+            if pressed[pygame.K_RIGHT] and player1.rect.y<self.height:
                 x=player1.rect.x+5
                 player1_group.update(x)
             if pressed[pygame.K_SPACE]:
                 pass
 
-        
+            
             self.display.blit(background,(0,0))
             player1_group.draw(self.display)
             pygame.display.flip()        
