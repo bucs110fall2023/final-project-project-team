@@ -17,7 +17,7 @@ class Controller:
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
-        laser = Laser(500, 500)
+        laser = Laser(500, 500, 0)
         laser_group.add(laser)
         alien1=Alien(200,200,"assets/spaceship.png")
         alien_group=pygame.sprite.Group()
@@ -47,5 +47,6 @@ class Controller:
 
             
             player1_group.draw(self.display)
+            laser_group.draw(self.display)
             alien_group.draw(self.display)
             pygame.display.flip()        
