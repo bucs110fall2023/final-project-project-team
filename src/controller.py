@@ -1,15 +1,17 @@
 # from src.alien import Alien
 import pygame
-from player import Player
-from laser import Laser
+from src.player import Player
+from src.laser import Laser
 
 class Controller:
     def __init__(self):
         pygame.init()
         self.display=pygame.display.set_mode()
         self.width,self.height=pygame.display.get_window_size()
+        
     def mainloop(self):
         background=pygame.image.load("assets/Space001.png")
+        self.bg_rect = background.get_rect(topleft = (0,0))
         player1=Player(500,500,"assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
@@ -23,10 +25,10 @@ class Controller:
                     pygame.quit()
                     break
             pressed=pygame.key.get_pressed()
-            if pressed[pygame.K_LEFT]:
+            if pressed[pygame.K_LEFT] and self.bg_rect.colliderect(player1):
                 x=player1.rect.x-5
                 player1_group.update(x)
-            if pressed[pygame.K_RIGHT]:
+            if pressed[pygame.K_RIGHT] and self.rect.right <= self.width:
                 x=player1.rect.x+5
                 player1_group.update(x)
             if pressed[pygame.K_SPACE]:
