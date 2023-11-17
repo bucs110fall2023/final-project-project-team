@@ -27,7 +27,11 @@ class Controller:
                     break
                 if event.type==pygame.KEYDOWN:
                     if event.key==pygame.K_SPACE:
-                        laser_group.draw(self.display)
+                        laser.rect.y=500
+                        while laser.rect.y>0:
+                            y=laser.rect.y-8
+                            laser_group.update(y)
+                            laser_group.draw(self.display)
             pressed=pygame.key.get_pressed()
             if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-8

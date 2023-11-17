@@ -7,6 +7,7 @@ class Laser(pygame.sprite.Sprite):
         self.image.fill('red')
         self.rect = self.image.get_rect(center = (x,y))
 
+
     
-    def update(self,x):
-        self.rect.x = x
+    def update(self,y):
+        self.rect.y = y
