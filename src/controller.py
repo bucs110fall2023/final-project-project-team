@@ -33,6 +33,8 @@ class Controller:
                     if event.key==pygame.K_SPACE:
                         laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
+                            if laser.rect.colliderect(alien1.rect):
+                                alien_group.remove(alien1)
                             y=laser.rect.y-8
                             laser_group.update(y)
                             laser_group.draw(self.display)
