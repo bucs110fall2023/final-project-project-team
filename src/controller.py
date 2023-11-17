@@ -1,6 +1,6 @@
 # from src.alien import Alien
 import pygame
-import player
+from player import Player
 
 class Controller:
     def __init__(self):
