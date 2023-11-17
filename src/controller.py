@@ -1,4 +1,4 @@
-from src.alien import Alien
+# from src.alien import Alien
 from src.player import Player
 import pygame
 
@@ -17,6 +17,14 @@ class Controller:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     break
+            pressed=pygame.key.get_pressed()
+            if pressed[pygame.K_LEFT]:
+                x=player1.rect.x-5
+                player1_group.update(x)
+            if pressed[pygame.K_RIGHT]:
+                x=player1.rect.x+5
+                player1_group.update(x)
+
         
             self.display.blit(background,(0,0))
             player1_group.draw(self.display)
