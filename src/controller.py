@@ -1,4 +1,4 @@
-# from src.alien import Alien
+from src.alien import Alien
 import pygame
 from src.player import Player
 from src.laser import Laser
@@ -8,19 +8,23 @@ class Controller:
         pygame.init()
         self.display=pygame.display.set_mode()
         self.width,self.height=pygame.display.get_window_size()
+        self.background=pygame.image.load("assets/Space001.png")
+
         
     def mainloop(self):
-        background=pygame.image.load("assets/Space001.png")
-        self.bg_rect = background.get_rect(topleft = (0,0))
+        self.bg_rect = self.background.get_rect(topleft = (0,0))
         player1=Player(500,500,"assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
         laser = Laser(500, 500)
         laser_group.add(laser)
+        alien1=Alien(200,200,"assets/spaceship.png")
+        alien_group=pygame.sprite.Group()
+        alien_group.add(alien1)
         
         while True:
-            self.display.blit(background,(0,0))
+            self.display.blit(self.background,(0,0))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -43,4 +47,5 @@ class Controller:
 
             
             player1_group.draw(self.display)
+            alien_group.draw(self.display)
             pygame.display.flip()        
