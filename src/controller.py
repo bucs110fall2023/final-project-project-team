@@ -1,5 +1,6 @@
 from src.alien import Alien
 import pygame
+import random
 from src.player import Player
 from src.laser import Laser
 
@@ -19,7 +20,7 @@ class Controller:
         laser_group = pygame.sprite.Group()
         laser = Laser(500, 500)
         laser_group.add(laser)
-        alien1=Alien(200,200,"assets/spaceship.png")
+        alien1=Alien(random.randint(0,1000),200,"assets/spaceship.png")
         alien_group=pygame.sprite.Group()
         alien_group.add(alien1)
         
@@ -49,5 +50,7 @@ class Controller:
 
             
             player1_group.draw(self.display)
-            alien_group.draw(self.display)
+            for i in range (0,6):
+
+                alien_group.draw(self.display)
             pygame.display.flip()        
