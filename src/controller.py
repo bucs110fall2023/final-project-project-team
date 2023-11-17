@@ -47,6 +47,5 @@ class Controller:
 
             
             player1_group.draw(self.display)
-            laser_group.draw(self.display)
             alien_group.draw(self.display)
             pygame.display.flip()        
