@@ -25,10 +25,10 @@ class Controller:
                     pygame.quit()
                     break
             pressed=pygame.key.get_pressed()
-            if pressed[pygame.K_LEFT] and self.bg_rect.colliderect(player1):
+            if pressed[pygame.K_LEFT]:
                 x=player1.rect.x-5
                 player1_group.update(x)
-            if pressed[pygame.K_RIGHT] and self.rect.right <= self.width:
+            if pressed[pygame.K_RIGHT]:
                 x=player1.rect.x+5
                 player1_group.update(x)
             if pressed[pygame.K_SPACE]:
