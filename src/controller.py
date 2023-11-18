@@ -22,7 +22,7 @@ class Controller:
         laser = Laser(500, 500)
         laser_group.add(laser)
         # alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
-        num_aliens = 5
+        num_aliens = 6
         alien_group=pygame.sprite.Group()
         for alien in range(num_aliens):
             alien1 = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
