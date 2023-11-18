@@ -19,7 +19,7 @@ class Controller:
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
-        laser = Laser(500, 500,8)
+        laser = Laser(500,500,8)
         laser_group.add(laser)
         alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
         alien_group=pygame.sprite.Group()
