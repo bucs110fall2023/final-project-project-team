@@ -27,7 +27,13 @@ class Controller:
         for alien in range(num_aliens):
             alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
             alien_group.add(alien)
-        print(alien_group)
+        
+        if len(alien_group) == 0:
+            num_aliens = 10
+            for alien in range(num_aliens):
+                alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
+                alien_group.add(alien)
+
             
         
         while True:
@@ -41,7 +47,7 @@ class Controller:
                         laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
                             if pygame.sprite.groupcollide(laser_group, alien_group, False, True):
-                                alien_group.remove(alien)                           
+                                alien.kill()                          
                             y=laser.rect.y-8
                             laser_group.update(y)
                             laser_group.draw(self.display)
