@@ -9,8 +9,8 @@ class Alien(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.x=x
         self.rect.y=y
-    def update(self,w):
-        self.rect.x+=1
+    def update(self,w,speed):
+        self.rect.x+=speed
         if self.rect.left>w:
             self.rect.right=0
     

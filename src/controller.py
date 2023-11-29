@@ -27,6 +27,11 @@ class Controller:
         for alien in range(num_aliens):
             alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
             alien_group.add(alien)
+        
+        # level design?
+        speed=1
+        alien_y=200
+        level=1
 
             
         
@@ -40,8 +45,9 @@ class Controller:
                     if event.key==pygame.K_SPACE:
                         laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
-                            if pygame.sprite.groupcollide(laser_group, alien_group, False, True):
-                                alien.kill()                        
+                            # if pygame.sprite.groupcollide(laser_group, alien_group, False, True):
+                                # alien_group.remove(alien)     
+                            pygame.sprite.spritecollide(laser,alien_group,True)                   
                             y=laser.rect.y-8
                             laser_group.update(y)
                             laser_group.draw(self.display)
@@ -54,13 +60,18 @@ class Controller:
                 player1_group.update(x)
             
             if not alien_group:
-                num_aliens = 10
+                level+=1
+                if level == 2:
+                  num_aliens = 10
+                if level == 3:
+                    speed=3
+                    
                 for alien in range(num_aliens):
                     alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
                     alien_group.add(alien)
                 
             for a in range(num_aliens):
-                alien_group.update(self.width)
+                alien_group.update(self.width,speed)
                 alien_group.draw(self.display)
                 
           
@@ -77,5 +88,7 @@ class Controller:
             #     alien_group.draw(self.display)
             #     pygame.display.flip()        
             # else:
-            #     alien1.rect.center=((200,200))   
+            #     alien1.rect.center=((200,200))  
+    
+         
                     
