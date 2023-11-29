@@ -11,7 +11,7 @@ class Controller:
         self.width,self.height=pygame.display.get_window_size()
         self.background=pygame.image.load("assets/Space001.png")
         self.clock = pygame.time.Clock()
-        self.clock.tick(60)
+        self.clock.tick(30)
         
     def mainloop(self):
         self.bg_rect = self.background.get_rect(topleft = (0,0))
@@ -29,10 +29,12 @@ class Controller:
             alien_group.add(alien)
         
         if not alien_group:
-            num_aliens = 10
+            num_aliens =10
             for alien in range(num_aliens):
                 alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
                 alien_group.add(alien)
+            
+
 
             
         
