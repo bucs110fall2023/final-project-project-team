@@ -27,14 +27,6 @@ class Controller:
         for alien in range(num_aliens):
             alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
             alien_group.add(alien)
-        
-        if not alien_group:
-            num_aliens =10
-            for alien in range(num_aliens):
-                alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
-                alien_group.add(alien)
-            
-
 
             
         
