@@ -15,17 +15,17 @@ class Controller:
         
     def mainloop(self):
         self.bg_rect = self.background.get_rect(topleft = (0,0))
-        player1=Player(500,500,"assets/image.png")
+        player1=Player(500,650,"assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
         laser = Laser(500, 500)
         laser_group.add(laser)
         # alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
-        num_aliens = 6
+        num_aliens = 10
         alien_group=pygame.sprite.Group()
         for alien in range(num_aliens):
-            alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
+            alien = Alien(random.randint(0,1400), random.randint(0,300), "assets/spaceship.png")
             alien_group.add(alien)
         
         # level design?
@@ -64,10 +64,11 @@ class Controller:
                 if level == 2:
                   num_aliens = 10
                 if level == 3:
-                    speed=3
+                    speed=1
+                    num_aliens = 15
                     
                 for alien in range(num_aliens):
-                    alien = Alien(random.randint(0,1400), 200, "assets/spaceship.png")
+                    alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
                     alien_group.add(alien)
                 
             for a in range(num_aliens):
