@@ -43,6 +43,7 @@ class Controller:
                     break
                 if event.type==pygame.KEYDOWN:
                     if event.key==pygame.K_SPACE:
+                        laser.beam()
                         laser.rect.center=player1.rect.center
                         while laser.rect.y>0:
                             # if pygame.sprite.groupcollide(laser_group, alien_group, False, True):
