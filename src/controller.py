@@ -12,6 +12,14 @@ class Controller:
         self.background=pygame.image.load("assets/Space001.png")
         self.clock = pygame.time.Clock()
         self.clock.tick(30)
+        self.text_color = (255,255,255)
+        self.font = pygame.font.Font(None, 48)
+        
+
+
+
+
+        
     def mainloop(self):
         self.bg_rect = self.background.get_rect(topleft = (0,0))
         player1=Player(500,650,"assets/image.png")
@@ -30,6 +38,11 @@ class Controller:
         # level design?
         speed=1
         level=1
+        text = self.font.render(f"Level: {level}", True, "white")
+
+
+            
+        
         while True:
             self.display.blit(self.background,(0,0))
             for event in pygame.event.get():
@@ -58,62 +71,46 @@ class Controller:
           
             # alien_group=self.levels(alien_group,level,num_aliens,speed,ran_x,ran_y)
             if not alien_group:
-                # level+=1                    
-                # if level == 2:
-                #   num_aliens = 8
-                # if level == 3:
-                #     speed=1.2
-                #     num_aliens = 11
-                # if level == 4:
-                #     num_aliens = 15
-                # if level == 5:
-                #     speed=2
-                #     num_aliens = 20   
-                num_aliens,speed,level=self.levels(alien_group,level,speed,num_aliens)
+                level+=1                    
+                if level == 2:
+                  num_aliens = 8
+                  text = self.font.render(f"Level: {level}", True, "white")
+
+                if level == 3:
+                    speed=1.2
+                    text = self.font.render(f"Level: {level}", True, "white")
+
+                    num_aliens = 11
+                if level == 4:
+                    num_aliens = 15
+                    text = self.font.render(f"Level: {level}", True, "white")
+
+                if level == 5:
+                    speed=1.5
+                    num_aliens = 20
+                    text = self.font.render(f"Level: {level}", True, "white")
+
+                if level == 6:
+                    text = self.font.render(f"Level: {level}", True, "white")
+
+                    pygame.quit()
                 for alien in range(num_aliens):
-                    ran_x,ran_y = self.rand(1400,500)
-                    alien = Alien(ran_x, ran_y, "assets/spaceship.png")
+                    alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
                     alien_group.add(alien)
 
-            # alien_group.draw_aliens(num_aliens,speed,self.width,self.display,alien_group)
             for a in range(num_aliens):
                 alien_group.update(self.width,speed)
                 alien_group.draw(self.display)
                 
-    
+          
+            
             player1_group.draw(self.display)
             
+            self.display.blit(text, (900, 800))
             
-            pygame.display.flip()    
-
-    def levels(self,alien_group,level,speed,num_aliens):
-        level+=1                    
-        if level == 2:
-            num_aliens = 8
-        if level == 3:
-            speed=1.2
-            num_aliens = 11
-        if level == 4:
-            num_aliens = 15
-        if level == 5:
-            speed=2
-            num_aliens = 20
-        if level==6:
-            pygame.QUIT
-        return num_aliens,speed,level
-
+            
+            pygame.display.flip()      
+            
     
-    def draw_aliens(self,num,speed,width,display,alien_group):
-        num_aliens=num 
-        for a in range(num_aliens):
-            alien_group.update(width,speed)
-            alien_group.draw(display)
-            
-    def rand(self,one,two):
-        ran_x=random.randint(0,one)
-        ran_y=random.randint(0,two)
-        return ran_x,ran_y
-                    
-        
          
                     
