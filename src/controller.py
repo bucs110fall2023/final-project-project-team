@@ -70,6 +70,7 @@ class Controller:
                 if level == 4:
                     num_aliens = 15
                 if level == 5:
+                    speed=2
                     num_aliens = 20
                 if level == 6:
                     pygame.quit()
