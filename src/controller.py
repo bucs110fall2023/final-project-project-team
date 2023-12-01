@@ -48,7 +48,7 @@ class Controller:
                         while laser.rect.y>0:
                             y=laser.rect.y-1
                             hit = pygame.sprite.spritecollide(laser,alien_group,True)   
-                            if hit:
+                            if hit: # if an alien has been hit, meaning this list gets updated and is not empty, thus true, break the while loop
                                 break                
                             laser_group.update(y)
                             laser_group.draw(self.display)
