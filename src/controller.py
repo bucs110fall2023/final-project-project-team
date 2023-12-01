@@ -31,18 +31,11 @@ class Controller:
         # alien1=Alien(random.randint(0,1400),200,"assets/spaceship.png")
         num_aliens = 6
         alien_group=pygame.sprite.Group()
-        for alien in range(num_aliens):
-            ran_x,ran_y = self.rand(1400,500)
-            alien = Alien(ran_x, ran_y, "assets/spaceship.png")
-            alien_group.add(alien)
+        alien_group=self.add(num_aliens,alien_group)
         # level design?
         speed=1
         level=1
         text = self.font.render(f"Level: {level}", True, "white")
-
-
-            
-        
         while True:
             self.display.blit(self.background,(0,0))
             for event in pygame.event.get():
@@ -67,50 +60,53 @@ class Controller:
             if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
                 x=player1.rect.x+8
                 player1_group.update(x)
-            
-          
             # alien_group=self.levels(alien_group,level,num_aliens,speed,ran_x,ran_y)
             if not alien_group:
                 level+=1                    
                 if level == 2:
                   num_aliens = 8
                   text = self.font.render(f"Level: {level}", True, "white")
-
                 if level == 3:
                     speed=1.2
                     text = self.font.render(f"Level: {level}", True, "white")
-
                     num_aliens = 11
                 if level == 4:
                     num_aliens = 15
                     text = self.font.render(f"Level: {level}", True, "white")
-
                 if level == 5:
                     speed=1.5
                     num_aliens = 20
                     text = self.font.render(f"Level: {level}", True, "white")
-
                 if level == 6:
                     text = self.font.render(f"Level: {level}", True, "white")
-
                     pygame.quit()
-                for alien in range(num_aliens):
-                    alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
-                    alien_group.add(alien)
-
-            for a in range(num_aliens):
-                alien_group.update(self.width,speed)
-                alien_group.draw(self.display)
+                alien_group=self.add(num_aliens,alien_group)
+            self.draw(num_aliens,alien_group,self.width,speed,self.display)
+            # for a in range(num_aliens):
+            #     alien_group.update(self.width,speed)
+            #     alien_group.draw(self.display)
                 
-          
-            
             player1_group.draw(self.display)
-            
             self.display.blit(text, (900, 800))
-            
-            
             pygame.display.flip()      
             
+    def rand(self,one,two):
+        ran_x=random.randint(0,one)
+        ran_y=random.randint(0,two)
+        return ran_x,ran_y
     
+    def add(self,num_aliens,alien_group):
+        for alien in range(num_aliens):
+            ran_x,ran_y = self.rand(1400,500)
+            alien = Alien(ran_x, ran_y, "assets/spaceship.png")
+            alien_group.add(alien)
+        return alien_group
+    
+    def draw(self,num_aliens,alien_group,width,speed,display):
+        for a in range(num_aliens):
+                alien_group.update(width,speed)
+                alien_group.draw(display)
+        
+        
          
                     
