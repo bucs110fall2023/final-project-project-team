@@ -12,6 +12,13 @@ class Controller:
         self.background=pygame.image.load("assets/Space001.png")
         self.clock = pygame.time.Clock()
         self.clock.tick(30)
+        self.text_color = (255,255,255)
+        self.font = pygame.font.Font(None, 48)
+        
+
+
+
+
         
     def mainloop(self):
         self.bg_rect = self.background.get_rect(topleft = (0,0))
@@ -31,6 +38,7 @@ class Controller:
         # level design?
         speed=1
         level=1
+        text = self.font.render(f"Level: {level}", True, "white")
 
 
             
@@ -64,15 +72,25 @@ class Controller:
                 level+=1                    
                 if level == 2:
                   num_aliens = 8
+                  text = self.font.render(f"Level: {level}", True, "white")
+
                 if level == 3:
                     speed=1.2
+                    text = self.font.render(f"Level: {level}", True, "white")
+
                     num_aliens = 11
                 if level == 4:
                     num_aliens = 15
+                    text = self.font.render(f"Level: {level}", True, "white")
+
                 if level == 5:
-                    speed=2
+                    speed=1.5
                     num_aliens = 20
+                    text = self.font.render(f"Level: {level}", True, "white")
+
                 if level == 6:
+                    text = self.font.render(f"Level: {level}", True, "white")
+
                     pygame.quit()
                 for alien in range(num_aliens):
                     alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
@@ -85,6 +103,8 @@ class Controller:
           
             
             player1_group.draw(self.display)
+            
+            self.display.blit(text, (900, 800))
             
             
             pygame.display.flip()      
