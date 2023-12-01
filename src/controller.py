@@ -71,6 +71,8 @@ class Controller:
                     num_aliens = 15
                 if level == 5:
                     num_aliens = 20
+                if level == 6:
+                    pygame.quit()
                 for alien in range(num_aliens):
                     alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
                     alien_group.add(alien)
