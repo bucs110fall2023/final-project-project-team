@@ -14,12 +14,7 @@ class Controller:
         self.clock.tick(30)
         self.text_color = (255,255,255)
         self.font = pygame.font.Font(None, 48)
-        
-
-
-
-
-        
+                
     def mainloop(self):
         self.bg_rect = self.background.get_rect(topleft = (0,0))
         player1=Player(500,650,"assets/image.png")
@@ -35,6 +30,7 @@ class Controller:
         # level design?
         speed=1
         level=1
+        move=8
         text = self.font.render(f"Level: {level}", True, "white")
         while True:
             self.display.blit(self.background,(0,0))
@@ -54,12 +50,13 @@ class Controller:
                             laser_group.update(y)
                             laser_group.draw(self.display)
             pressed=pygame.key.get_pressed()
-            if pressed[pygame.K_LEFT] and player1.rect.x>0:
-                x=player1.rect.x-8
-                player1_group.update(x)
-            if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
-                x=player1.rect.x+8
-                player1_group.update(x)
+            # if pressed[pygame.K_LEFT] and player1.rect.x>0:
+            #     x=player1.rect.x-move
+            #     player1_group.update(x)
+            # if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
+            #     x=player1.rect.x+move
+            #     player1_group.update(x)
+            self.movement(pressed,player1,player1_group,move)
             # alien_group=self.levels(alien_group,level,num_aliens,speed,ran_x,ran_y)
             if not alien_group:
                 level+=1                    
@@ -106,6 +103,14 @@ class Controller:
         for a in range(num_aliens):
                 alien_group.update(width,speed)
                 alien_group.draw(display)
+    
+    def movement(self, pressed,player1,player1_group,move):
+         if pressed[pygame.K_LEFT] and player1.rect.x>0:
+                x=player1.rect.x-move
+                player1_group.update(x)
+         if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
+                x=player1.rect.x+move
+                player1_group.update(x)
         
         
          
