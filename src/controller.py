@@ -70,6 +70,7 @@ class Controller:
                 if level == 4:
                     num_aliens = 15
                 if level == 5:
+                    speed=2
                     num_aliens = 20
                 for alien in range(num_aliens):
                     alien = Alien(random.randint(0,1400), random.randint(0,500), "assets/spaceship.png")
