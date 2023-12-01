@@ -61,4 +61,14 @@ Test steps:
 2. See if a red laser fires from the player ship
 3. Press and hold space
 4. See if laser only shoots once
+Test Case 4: Level increase
+Test description: Verify that when all aliens are gone, more appear.
+Test steps:
+1. Hit all aliens on the screen
+2. See if more appear on the screen for a maximum of 5 times(5 levels)
+Test Case 5: Laser functionality
+Test description: Verify that when a laser hits an alien, it does not hit other aliens
+Test steps:
+1. Shoot a laser in the direction of an alien
+2. See if when the laser makes contact with an alien, it stops and doesn't go through. 
 
