@@ -54,6 +54,7 @@ Test steps:
 2. See if the alien is gone
 3. Fire a laser and miss an alien
 4. See if the alien is still there
+Expected outcome: An alien should be removed from the screen when a laser makes contact with it.
 Test Case 3: Player's laser
 Test description: Verify that the laser correctly fires
 Test steps:
@@ -61,14 +62,17 @@ Test steps:
 2. See if a red laser fires from the player ship
 3. Press and hold space
 4. See if laser only shoots once
+Expected outcome: A red laser fires once every time spacebar is pressed.
 Test Case 4: Level increase
 Test description: Verify that when all aliens are gone, more appear.
 Test steps:
 1. Hit all aliens on the screen
 2. See if more appear on the screen for a maximum of 5 times(5 levels)
-Test Case 5: Laser functionality
+Expected outcome: User is able to play 5 levels of reappearing aliens
+Test Case 5: Laser Collision
 Test description: Verify that when a laser hits an alien, it does not hit other aliens
 Test steps:
 1. Shoot a laser in the direction of an alien
 2. See if when the laser makes contact with an alien, it stops and doesn't go through. 
+Expected outcome: The laser stops once it makes contact with an alien
 
