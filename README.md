@@ -36,7 +36,10 @@ We plan on making a game based on "Space Invaders". We want to implement a movab
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+- Controller
+- Alien
+- Player
+- Laser
 
 ## ATP
 Test Case 1: Player Movement
