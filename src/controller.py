@@ -16,6 +16,11 @@ class Controller:
         self.font = pygame.font.Font(None, 48)
                 
     def mainloop(self):
+        """
+        This function is basically the bulk of the project. Here we call instances of our
+        classes and set values for background and sprite groups. We alse have the movement,
+        collision, and level systems here. 
+        """
         self.bg_rect = self.background.get_rect(topleft = (0,0))
         player1=Player(500,650,"assets/image.png")
         player1_group=pygame.sprite.Group()
@@ -88,6 +93,9 @@ class Controller:
             pygame.display.flip()      
             
     def rand(self,one,two):
+        """
+        This function decides the random values for the spawning of the enemies
+        """
         ran_x=random.randint(0,one)
         ran_y=random.randint(0,two)
         return ran_x,ran_y
