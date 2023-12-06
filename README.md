@@ -71,6 +71,7 @@ Test description: Verify that when all aliens are gone, more appear.
 Test steps:
 1. Hit all aliens on the screen
 2. See if more appear on the screen for a maximum of 5 times(5 levels)
+3. Game closes after 5 levels
 Expected outcome: User is able to play 5 levels of reappearing aliens
 Test Case 5: Laser Collision
 Test description: Verify that when a laser hits an alien, it does not hit other aliens
