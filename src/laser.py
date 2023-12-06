@@ -2,6 +2,14 @@ import pygame
 
 class Laser(pygame.sprite.Sprite):
     def __init__(self,x, y):
+        """
+        Creates the laser onject, including the image and rectangle surrounding the image.
+        
+        Args: 
+        x(int): x pos of the laser
+        y(int): y pos of the laser
+        
+        """
         super().__init__()
         self.image = pygame.Surface((4, 20))
         self.image.fill('red')
