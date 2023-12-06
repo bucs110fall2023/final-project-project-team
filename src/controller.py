@@ -72,21 +72,22 @@ class Controller:
         """
         This function decides the random values for the spawning of the enemies
         args: one, two decide random vaues for x and y positions
-        return: int
+        return: ran_x,ran_y (int): the random x and y values
         """
         ran_x=random.randint(0,one)
         ran_y=random.randint(0,two)
         return ran_x,ran_y
     
     def add(self,num_aliens,alien_group):
-        """_summary_
+        """
+        Adds aliens of different x and y coordinates to the alien_group sprite group
 
         Args:
             num_aliens (int): amount of aliens in the sprite group
-            alien_group (sprite Group): The sprite group containing the amount of aliens
+            alien_group : The sprite group containing the amount of aliens
 
         Returns:
-            alien_group (sprite Group): The sprite gorup containing the amount of aliensß
+            alien_group : The sprite group containing the amount of aliens
         """
         for alien in range(num_aliens):
             ran_x,ran_y = self.rand(1400,500)
@@ -100,10 +101,10 @@ class Controller:
 
         Args:
             num_aliens (int): The amount of aliens to be displayed
-            alien_group (sprite Group): The sprite group containing the alien sprites
+            alien_group : The sprite group containing the alien sprites
             width (int): Width of the display
             speed (int): The speed the aliens should move
-            display (display): The display to draw the aliens on
+            display : The display to draw the aliens on
         """
         for a in range(num_aliens):
                 alien_group.update(width,speed)
@@ -114,9 +115,9 @@ class Controller:
         Detects if and how the player's ship should be moved(left or right)
 
         Args:
-            pressed (key): The key pressed by the user
-            player1 (object): The player's ship rectangle
-            player1_group (sprite group): The sprite of the player's ship
+            pressed : The key pressed by the user
+            player1 : The player's ship rectangle
+            player1_group : The sprite of the player's ship
             move (int): How much the player's ship should move by
         """
         if pressed[pygame.K_LEFT] and player1.rect.x>0:
@@ -134,12 +135,12 @@ class Controller:
             level (int): What level the game is up to
             speed (int): How fast the aliens should move
             num_aliens (int): amount of aliens to be displayed on screen
-            text (font): The current level
+            text : The current level
 
         Returns:
             Speed(int) : How fast the aliens should move
             num_aliens(int): amount of aliens to be displayed
-            text (font): The current level
+            text : The current level
         """
         if level == 2:
             num_aliens = 8
