@@ -71,35 +71,14 @@ class Controller:
     def rand(self,one,two):
         """
         This function decides the random values for the spawning of the enemies
-<<<<<<< HEAD
         args: one, two decide random vaues for x and y positions
         return: int
-=======
-        
-        Args:
-            one (int): an integer that represents a random x value
-            two (int): an integer that represents a random y value
-        
-        Returns:
-            ran_x(int): a random value between 0 to the 'one' variable
-            ran_y(int): a random value between o to the 'two' variable
-        
->>>>>>> 0f27e018986610ff43235263aafff40167771742
         """
         ran_x=random.randint(0,one)
         ran_y=random.randint(0,two)
         return ran_x,ran_y
     
     def add(self,num_aliens,alien_group):
-<<<<<<< HEAD
-        """
-        This function adds aliens  to sprite group based on number of aliens specified
-        in num_aliens
-        args: num_alien, alien_group
-        return: spritegroup
-        """
-    
-=======
         """_summary_
 
         Args:
@@ -109,7 +88,6 @@ class Controller:
         Returns:
             alien_group (sprite Group): The sprite gorup containing the amount of aliensß
         """
->>>>>>> 0f27e018986610ff43235263aafff40167771742
         for alien in range(num_aliens):
             ran_x,ran_y = self.rand(1400,500)
             alien = Alien(ran_x, ran_y, "assets/spaceship.png")
