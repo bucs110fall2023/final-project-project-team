@@ -94,12 +94,6 @@ class Controller:
             alien_group.add(alien)
         return alien_group
     
-    def draw(self,num_aliens,alien_group,width,speed,display):
-        """
-        This is the function that draws the aliens based on the number of aliens 
-        specified.
-        args: num_aliens, alien_group, width, speed, display
-        """
     def draw_aliens(self,num_aliens,alien_group,width,speed,display):
         """
         Draws the alien sprites on the screen
