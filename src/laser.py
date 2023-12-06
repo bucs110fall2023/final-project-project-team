@@ -1,11 +1,14 @@
 import pygame
 
 class Laser(pygame.sprite.Sprite):
-    """
-    This class contains the parameters for the laser object including the image 
-    and the rectangle that surrounds it.
-    """
+    
     def __init__(self,x, y):
+
+        """
+        This clas contains the parameters for the laser onject, including the image and
+        rectangle surrounding the image.
+        
+        """
         super().__init__()
         self.image = pygame.Surface((4, 20))
         self.image.fill('red')
