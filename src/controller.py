@@ -6,10 +6,14 @@ from src.laser import Laser
 
 class Controller:
     def __init__(self):
+        """
+        Creates a controller object that controls everything that goes on in the game.
+        """
         pygame.init()
         self.display=pygame.display.set_mode()
         self.width,self.height=pygame.display.get_window_size()
         self.background=pygame.image.load("assets/Space001.png")
+        self.bg_rect = self.background.get_rect(topleft = (0,0))
         self.clock = pygame.time.Clock()
         self.clock.tick(30)
         self.text_color = (255,255,255)
@@ -22,7 +26,6 @@ class Controller:
         that handles the 'shootable' laser and the laser collision with aliens. Finally it checks
         for player movement and if all aliens have been cleared out. 
         """
-        self.bg_rect = self.background.get_rect(topleft = (0,0))
         player1=Player(500,650,"assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
@@ -99,19 +102,52 @@ class Controller:
         return alien_group
     
     def draw_aliens(self,num_aliens,alien_group,width,speed,display):
+        """
+        Draws the alien sprites on the screen
+
+        Args:
+            num_aliens (int): The amount of aliens to be displayed
+            alien_group (sprite Group): The sprite group containing the alien sprites
+            width (int): Width of the display
+            speed (int): The speed the aliens should move
+            display (display): The display to draw the aliens on
+        """
         for a in range(num_aliens):
                 alien_group.update(width,speed)
                 alien_group.draw(display)
     
     def movement(self, pressed,player1,player1_group,move):
-         if pressed[pygame.K_LEFT] and player1.rect.x>0:
+        """
+        Detects if and how the player's ship should be moved(left or right)
+
+        Args:
+            pressed (key): The key pressed by the user
+            player1 (object): The player's ship rectangle
+            player1_group (sprite group): The sprite of the player's ship
+            move (int): How much the player's ship should move by
+        """
+        if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-move
                 player1_group.update(x)
-         if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
+        if pressed[pygame.K_RIGHT] and player1.rect.right<self.width:
                 x=player1.rect.x+move
                 player1_group.update(x)
         
     def levels(self, level,speed,num_aliens,text):
+        """
+        The level system that updates whenever all aliens on the display are gone(for a max of 5 times)
+
+        Args:
+            level (int): What level the game is up to
+            speed (int): How fast the aliens should move
+            num_aliens (int): amount of aliens to be displayed on screen
+            text (font): The current level
+
+        Returns:
+            Speed(int) : How fast the aliens should move
+            num_aliens(int): amount of aliens to be displayed
+            text (font): The current level
+        """
         if level == 2:
             num_aliens = 8
             text = self.font.render(f"Level: {level}", True, "white")

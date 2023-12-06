@@ -1,9 +1,16 @@
 import pygame
-import math
 
 class Alien(pygame.sprite.Sprite):
     
     def __init__(self, x,y, img):
+        """
+        An alien object that takes in a 
+
+        Args:
+            x (_type_): _description_
+            y (_type_): _description_
+            img (_type_): _description_
+        """
         super().__init__()
         self.image=pygame.image.load(img)
         self.image = pygame.transform.scale(self.image,(100,100))
