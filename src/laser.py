@@ -9,7 +9,14 @@ class Laser(pygame.sprite.Sprite):
         self.sound=pygame.mixer.Sound("assets/shoot.wav")
 
     def beam(self):
+        """
+        This function is responsible for containing the laser sound from the player.
+        """
         self.sound.play()
     
     def update(self,y):
+        """
+        This function contains the movement update for the laser.
+        
+        """
         self.rect.y = y

@@ -12,6 +12,10 @@ class Alien(pygame.sprite.Sprite):
         self.rect.y=y
         
     def update(self,w,speed):
+        """
+        This function is responsible for updating the movement for the enemy sprites.
+        It also ensures that if the enemies go off screen, they come back on the left side.
+        """
         self.rect.x+=speed
         if self.rect.left>w:
             self.rect.right=0

@@ -95,12 +95,21 @@ class Controller:
     def rand(self,one,two):
         """
         This function decides the random values for the spawning of the enemies
+        args: one, two decide random vaues for x and y positions
+        return: int
         """
         ran_x=random.randint(0,one)
         ran_y=random.randint(0,two)
         return ran_x,ran_y
     
     def add(self,num_aliens,alien_group):
+        """
+        This function adds aliens  to sprite group based on number of aliens specified
+        in num_aliens
+        args: num_alien, alien_group
+        return: spritegroup
+        """
+    
         for alien in range(num_aliens):
             ran_x,ran_y = self.rand(1400,500)
             alien = Alien(ran_x, ran_y, "assets/spaceship.png")
@@ -108,11 +117,21 @@ class Controller:
         return alien_group
     
     def draw(self,num_aliens,alien_group,width,speed,display):
+        """
+        This is the function that draws the aliens based on the number of aliens 
+        specified.
+        args: num_aliens, alien_group, width, speed, display
+        """
         for a in range(num_aliens):
                 alien_group.update(width,speed)
                 alien_group.draw(display)
     
     def movement(self, pressed,player1,player1_group,move):
+         """
+         This function decides the movement of the player using left and right keys
+         args: pressed, player1, player1_group, move
+         
+         """
          if pressed[pygame.K_LEFT] and player1.rect.x>0:
                 x=player1.rect.x-move
                 player1_group.update(x)

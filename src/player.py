@@ -9,5 +9,10 @@ class Player(pygame.sprite.Sprite):
         self.rect.x=x
         self.rect.y=y 
     def update(self,x):
+        """
+        This function updates the x position of the player whenever it is moved with
+        left/right keys.
+        
+        """
         self.rect.x=(x)
         
