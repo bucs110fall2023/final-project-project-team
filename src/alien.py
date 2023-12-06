@@ -4,12 +4,12 @@ class Alien(pygame.sprite.Sprite):
     
     def __init__(self, x,y, img):
         """
-        An alien object that takes in a 
+        An alien object with a rectangle and image
 
         Args:
-            x (_type_): _description_
-            y (_type_): _description_
-            img (_type_): _description_
+            x (int): x coord of alien
+            y (int): y coord of alien
+            img : the image of the alien
         """
         super().__init__()
         self.image=pygame.image.load(img)
